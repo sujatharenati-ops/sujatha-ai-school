@@ -63,3 +63,15 @@ except:
     st.write("No students saved yet. Add your first student above!")
 
 st.caption("Day 7 - From Desktop to Web - Next: Share on Internet!")
+
+
+# Download Button - So results.csv can be downloaded from Cloud
+import os
+if os.path.exists("results.csv"):
+    with open("results.csv", "rb") as f:
+        st.download_button(
+            label="📥 Download results.csv",
+            data=f,
+            file_name="results.csv",
+            mime="text/csv"
+        )
